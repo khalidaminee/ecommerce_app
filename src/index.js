@@ -14,15 +14,16 @@ import Login from './Login';
 import Register from './Register';
 import AddProduct from './AddProduct';
 import UpdateProduct from './UpdateProduct';
+import ErrorPage from './UpdateProduct';
 
 const router = createBrowserRouter([
  
   {
     path: "/",
     element: <App />,
-    errorElement: <div>404 Not Found!</div>
-  },
-  {
+    
+    children: [
+      {
     path: "/Login",
     element: <Login />,
     errorElement: <div>404 Not Found!</div>
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
     path: "/UpdateProduct",
     element: <UpdateProduct />,
   },
+    ],
+    errorElement: <ErrorPage />
+  },
+  
 ]);
 
 
